@@ -1,0 +1,9 @@
+; DOSRunnerShell.def : Declares the module parameters.
+
+LIBRARY      "DOSRunnerShell.DLL"
+
+EXPORTS
+	DllCanUnloadNow		PRIVATE
+	DllGetClassObject	PRIVATE
+	DllRegisterServer	PRIVATE
+	DllUnregisterServer	PRIVATE

@@ -1,0 +1,36 @@
+// DOSRunnerShell.idl : IDL source for DOSRunnerShell
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (DOSRunnerShell.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(7bdcdb1e-3d6f-11df-adb8-60fb4280aea7),
+	dual,
+	helpstring("IContextMenuHandler Interface"),
+	pointer_default(unique)
+]
+interface IContextMenuHandler : IDispatch{
+};
+
+[
+	uuid(7bdcdb1e-3d6f-11df-9d58-60fb4280aea7),
+	version(1.0),
+	helpstring("DOSRunnerShell 1.0 Type Library")
+]
+library DOSRunnerShellLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(7bdcdb1e-3d6f-11df-b72b-60fb4280aea7),
+		helpstring("ContextMenuHandler Class")
+	]
+	coclass ContextMenuHandler
+	{
+		[default] interface IContextMenuHandler;
+	};
+};

@@ -1,0 +1,51 @@
+HKCR
+{
+    NoRemove CLSID
+    {
+        ForceRemove {7bdcdb1e-3d6f-11df-b72b-60fb4280aea7} = s 'DOSRunner Context Menu'
+        {
+			ProgID = s 'DOSRunnerShell.ContextMenu.1'
+			VersionIndependentProgID = s 'DOSRunnerShell.ContextMenu'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{7bdcdb1e-3d6f-11df-9d58-60fb4280aea7}'
+        }
+    }
+    NoRemove *
+    {
+        NoRemove shellex
+        {
+            NoRemove ContextMenuHandlers
+            {
+                ForceRemove DOSRunnerContextMenu = s '{7bdcdb1e-3d6f-11df-b72b-60fb4280aea7}'
+            }
+        }
+    }
+    NoRemove Directory
+    {
+        NoRemove shellex
+        {
+            NoRemove ContextMenuHandlers
+            {
+                ForceRemove DOSRunnerContextMenu = s '{7bdcdb1e-3d6f-11df-b72b-60fb4280aea7}'
+            }
+        }
+    }
+    NoRemove Directory
+    {
+		NoRemove Background
+		{
+			NoRemove shellex
+			{
+				NoRemove ContextMenuHandlers
+				{
+					ForceRemove DOSRunnerContextMenu = s '{7bdcdb1e-3d6f-11df-b72b-60fb4280aea7}'
+				}
+			}
+		}
+    }
+}
